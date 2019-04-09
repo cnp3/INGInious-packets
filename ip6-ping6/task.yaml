@@ -1,0 +1,55 @@
+accessible: true
+author: Olivier Bonaventure
+context: 'ICMPv6, described in the `IPv6 chapter <http://cnp3book.info.ucl.ac.be/2nd/html/protocols/ipv6.html#icmp-version-6>`_
+    of `Computer Networking: Principles, Protocols and Practice <http://cnp3book.info.ucl.ac.be/>`_
+    is a companion protocol for IPv6 that is used for various functions including
+    network debugging. `ping6` is a popular debugging tool that allows to verify whether
+    a remote host is up and running. For this, it sends an ICMPv6 Echo request that
+    contains some information and waits for an ICMPv6 Echo reply.'
+environment: mcq
+evaluate: best
+groups: false
+input_random: '0'
+limits:
+    memory: '100'
+    time: '30'
+    output: '2'
+name: 'IPv6 : ping6'
+network_grading: false
+order: 33
+problems:
+    test:
+        range: network-application
+        pcap: ip6-packet71-72.pcap
+        hide:
+            1:
+            - Identifier
+            - Sequence Number
+        name: ping6 messages
+        feedback:
+            Identifier: The Identifier field is defined in `Section 4.1 <https://tools.ietf.org/html/rfc4443#section-4.1>`_
+                of `RFC4443 <https://tools.ietf.org/html/rfc4443>`_. It is sent to
+                a specific value by the sender of the Echo Request message that verifies
+                that the Echo Reply messages that it receives also contain this value.
+            Sequence Number: The Sequence Number field is defined in `Section 4.1
+                <https://tools.ietf.org/html/rfc4443#section-4.1>`_ of `RFC4443 <https://tools.ietf.org/html/rfc4443>`_.
+                It is sent to a specific value by the sender of the Echo Request message
+                that verifies that the Echo Reply messages that it receives also contain
+                this value.
+        shuffle-feedback: ''
+        header: Can you infer the Identifier and the sequence fields of the ICMPv6
+            Echo response ?
+        type: network-trace
+        shuffle: false
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+tags:
+    '0':
+        type: 2
+        visible: true
+        name: IPv6
+        description: IPv6 protocol
+        id: ''
+weight: 1.0

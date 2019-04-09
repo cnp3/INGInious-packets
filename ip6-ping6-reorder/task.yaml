@@ -1,0 +1,49 @@
+accessible: true
+author: Olivier Bonaventure
+context: 'ICMPv6, described in the `IPv6 chapter <http://cnp3book.info.ucl.ac.be/2nd/html/protocols/ipv6.html#icmp-version-6>`_
+    of `Computer Networking: Principles, Protocols and Practice <http://cnp3book.info.ucl.ac.be/>`_
+    is a companion protocol for IPv6 that is used for various functions including
+    network debugging. `ping6` is a popular debugging tool that allows to verify whether
+    a remote host is up and running. For this, it sends an ICMPv6 Echo request that
+    contains some information and waits for an ICMPv6 Echo reply.'
+environment: mcq
+evaluate: best
+groups: false
+input_random: '0'
+limits:
+    output: '2'
+    time: '30'
+    memory: '100'
+name: 'IPv6 : ping6'
+network_grading: false
+order: 34
+problems:
+    test:
+        header: Can you reorder the packets that were captured while a host was using
+            `ping6` to verify the reachability of destination `2001:6a8:3081:1::2`
+            ?
+        pcap: ip6-packet80-86.pcap
+        shuffle-feedback: 'Remember that two of the fields present in the ICMPv6 header
+            could help you to reorder these packets : the Identifier and the Sequence
+            Number. During a ping6 session, all the Echo Request messages should use
+            the same identifier and their Sequence Number will be incremented by one
+            after each transmission. The destination simply echoes the received Identifier
+            and Sequence Numbers.'
+        feedback: {}
+        range: network-application
+        hide: {}
+        name: Reorder ICMPv6 messages
+        shuffle: true
+        type: network-trace
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+tags:
+    '0':
+        visible: true
+        type: 2
+        name: IPv6
+        description: IPv6 protocol
+        id: ''
+weight: 1.0

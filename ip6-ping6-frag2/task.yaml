@@ -1,0 +1,48 @@
+accessible: true
+author: Olivier Bonaventure
+context: 'IPv6, described in the `IPv6 chapter <http://cnp3book.info.ucl.ac.be/2nd/html/protocols/ipv6.html#icmp-version-6>`_
+    of `Computer Networking: Principles, Protocols and Practice <http://cnp3book.info.ucl.ac.be/>`_
+    can fragment packets that are larger than the MTU.'
+environment: mcq
+evaluate: best
+groups: false
+input_random: '0'
+limits:
+    output: '2'
+    time: '30'
+    memory: '100'
+name: 'IPv6 : packet fragmentation'
+network_grading: false
+order: 36
+problems:
+    test:
+        header: |-
+            Can you reorder the IPv6 fragments below ?
+
+            Note that for technical reasons, the packet dissector shows the Offset field as two different bytes :
+             - the low order byte (Offset LB)
+             - the high order byte (Offset UB)
+
+            This implies that the Offset is :math:`LB+256*UB`.
+        pcap: ip6-ping6-frag-161-165.pcap
+        shuffle-feedback: Remember that the last fragment has its More bit set to
+            0 while all other segments have their More bit set to 1. Then the Offset
+            field is used to reorder the different fragments in increasing order.
+        feedback: {}
+        range: network
+        hide: {}
+        name: Reorder IPv6 packet fragments
+        shuffle: true
+        type: network-trace
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+tags:
+    '0':
+        visible: true
+        type: 2
+        name: IPv6
+        description: IPv6 protocol
+        id: ''
+weight: 1.0

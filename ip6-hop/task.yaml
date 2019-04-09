@@ -1,0 +1,57 @@
+accessible: true
+author: Olivier Bonaventure
+context: 'IPv6 is described in the `IPv6 chapter <http://cnp3book.info.ucl.ac.be/2nd/html/protocols/ipv6.html>`_
+    of `Computer Networking: Principles, Protocols and Practice <http://cnp3book.info.ucl.ac.be/>`_.
+    When a router forwards a packet, it updates some of its fields. '
+environment: mcq
+evaluate: best
+groups: false
+input_random: '0'
+limits:
+    output: '2'
+    time: '30'
+    memory: '100'
+name: 'IPv6 : packet forwarding'
+network_grading: false
+order: 29
+problems:
+    test:
+        header: The first packet was captured on an ingress interface of a router.
+            The second was captured on its egress interface after having been forwarded.
+            Can you infer the different fields of the forwarded  packet ?
+        pcap: ethb.pcap
+        shuffle-feedback: ''
+        feedback:
+            Destination Address: A router never changes the Destination Address of
+                the packets that it forwards.
+            Hop Limit: A router always decrements the Hop Limit of the packets that
+                it forwards.
+            Next Header: A router never changes the Next Header of the packets that
+                it forwards.
+            Payload Length: A router never changes the payload length of the packets
+                that it forwards.
+            Source Address: A router never changes the Source Address of the packets
+                that it forwards.
+        range: network
+        hide:
+            1:
+            - Payload Length
+            - Next Header
+            - Hop Limit
+            - Source Address
+            - Destination Address
+        name: Packet forwarding
+        type: network-trace
+        shuffle: false
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+tags:
+    '0':
+        visible: true
+        type: 2
+        name: IPv6
+        description: IPv6 protocol
+        id: ''
+weight: 1.0

@@ -1,0 +1,44 @@
+accessible: true
+author: Olivier Bonaventure
+context: 'TCP, as explained in the `TCP chapter <http://cnp3book.info.ucl.ac.be/2nd/html/protocols/tcp.html>`_
+    of `Computer Networking: Principles, Protocols and Practice <http://cnp3book.info.ucl.ac.be/>`_
+    includes a sequence number in each segment that carries data and uses acknowledgements.'
+environment: mcq
+evaluate: best
+groups: false
+input_random: '0'
+limits:
+    memory: '100'
+    time: '30'
+    output: '2'
+name: Inferring acknowledgment numbers
+network_grading: false
+order: 8
+problems:
+    test:
+        range: transport-application
+        pcap: tcp-rfc793-53-etc.pcap
+        hide:
+            4:
+            - Acknowledgment Number
+        name: Inferring acknowledgement numbers
+        feedback: {}
+        shuffle-feedback: ''
+        header: During this connection, the client sent some data in successive segments
+            and then the server replied with a an acknowledgement that confirms the
+            reception of all the previous segments. Can you infer the acknowledgement
+            number of the segment returned by the server ?
+        type: network-trace
+        shuffle: false
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+tags:
+    '0':
+        type: 2
+        visible: true
+        name: TCP
+        description: TCP protocol
+        id: ''
+weight: 1.0

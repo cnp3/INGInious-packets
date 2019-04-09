@@ -1,0 +1,61 @@
+accessible: true
+author: Olivier Bonaventure
+context: |-
+    TCP segments contain flags. These are defined in `Section 3.1 <https://tools.ietf.org/html/rfc793#section-3.1>`_ of `RFC793 <https://tools.ietf.org/html/rfc793>`_.
+
+    The segment below was sent by a client to create a TCP connection towards a web server. Ingicated the values of the SYN, URG, PSH, ACK, FIN and RST flags inside this segment (1 means set and 0 means reset)?
+environment: mcq
+evaluate: best
+groups: false
+input_random: '0'
+limits:
+    time: '30'
+    output: '2'
+    memory: '100'
+name: The first TCP segment sent by a client.
+network_grading: false
+order: 2
+problems:
+    test:
+        hide:
+            0:
+            - ACK
+            - URG
+            - PSH
+            - RST
+            - SYN
+            - FIN
+        pcap: tcp-rfc793-104.pcap
+        name: Establishment of a TCP connection
+        header: This segment was sent by a client to create a TCP connection towards
+            a web server. What are the flags that must be set inside this segment
+            ?
+        range: transport
+        feedback:
+            ACK: The ACK flag is only set when the segment contains a valid acknowledgement
+                number. This is not the case in the initial segment sent by a client.
+            FIN: The RST flag is used to gracefully terminate a connection, not to
+                create one.
+            PSH: The PSH flag is only associated with data. It is never set in the
+                first segment sent to create a TCP connection.
+            RST: The RST flag is used to abruptly terminate a connection, not to create
+                one.
+            SYN: The SYN flag is set in the first segment sent to initiate a TCP connection
+                as described in `Section 3.7 of RFC 793 <https://tools.ietf.org/html/rfc793#section-3.4>`_.
+            URG: The URG flag is only set in Urgent data as described in `Section
+                3.7 of RFC 793 <https://tools.ietf.org/html/rfc793#section-3.4>`_.
+                It is never set in the first segment sent to create a TCP connection.
+        type: network-trace
+        shuffle: false
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+tags:
+    '0':
+        visible: true
+        name: TCP
+        description: TCP protocol
+        type: 2
+        id: ''
+weight: 1.0

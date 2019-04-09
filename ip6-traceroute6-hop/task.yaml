@@ -1,0 +1,66 @@
+accessible: true
+author: Olivier Bonaventure
+context: |
+    ICMPv6, described in the `IPv6 chapter <http://cnp3book.info.ucl.ac.be/2nd/html/protocols/ipv6.html#icmp-version-6>`_ of `Computer Networking: Principles, Protocols and Practice <http://cnp3book.info.ucl.ac.be/>`_ is a companion protocol for IPv6 that is used for various functions including network debugging. `traceroute6` is a popular debugging tool that allows to trace the path towards a destination.
+environment: mcq
+evaluate: best
+groups: false
+input_random: '0'
+limits:
+    output: '2'
+    time: '30'
+    memory: '100'
+name: 'IPv6 : Hop Limit field with traceroute6 '
+network_grading: false
+order: 38
+problems:
+    test:
+        header: |-
+            Can you infer the Hop Limit value of the packets captured during the following traceroute6:
+
+            .. code:: console
+
+               traceroute6 -q 1 -n www.ietf.org
+               traceroute6: Warning: www.ietf.org.cdn.cloudflare.net has multiple addresses; using 2606:4700:10::6814:155
+               traceroute6 to www.ietf.org.cdn.cloudflare.net (2606:4700:10::6814:155) from 2a02:2788:484:59e:2c1c:849e:f74f:e233, 64 hops max, 12 byte packets
+               1  2a02:2788:484:59e:a221:b7ff:fed8:aa90  2.415 ms
+               2  2a02:2788:480::1  8.138 ms
+               3  2a02:2788:480:2::1  9.125 ms
+               4  2a02:2788:ffff:1b::1  9.757 ms
+               5  2001:7f8:26::a501:3335:1  7.960 ms
+               6  2400:cb00:78:1024::a29e:e959  7.934 ms
+        pcap: ip6-traceroute6-86-98.pcap
+        shuffle-feedback: ''
+        feedback:
+            Hop Limit: '`traceroute6` first sends a packet with a Hop Limit set to
+                1 to force the first router on the path to send an ICMPv6 Hop Limit
+                exceeded message, then to 2, ...'
+        range: network-transport
+        hide:
+            0:
+            - Hop Limit
+            1:
+            - Hop Limit
+            2:
+            - Hop Limit
+            3:
+            - Hop Limit
+            4:
+            - Hop Limit
+            5:
+            - Hop Limit
+        name: Usage of Hop Limit by traceroute6
+        type: network-trace
+        shuffle: false
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+tags:
+    '0':
+        visible: true
+        type: 2
+        name: IPv6
+        description: IPv6 protocol
+        id: ''
+weight: 1.0

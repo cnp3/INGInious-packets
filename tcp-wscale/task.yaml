@@ -1,0 +1,52 @@
+accessible: true
+author: Olivier Bonaventure
+context: 'The TCP Window Scale option, defined in `RFC1323 <https://tools.ietf.org/html/rfc1323>`_
+    and described in the `TCP chapter <http://cnp3book.info.ucl.ac.be/2nd/html/protocols/tcp.html>`_
+    of `Computer Networking: Principles, Protocols and Practice <http://cnp3book.info.ucl.ac.be/>`_
+    allows endhosts to use a larger window than TCP''s default 64 KBytes window.'
+environment: mcq
+evaluate: best
+groups: false
+input_random: '0'
+limits:
+    memory: '100'
+    time: '30'
+    output: '2'
+name: The TCP Windows Scale option
+network_grading: false
+order: 15
+problems:
+    test:
+        range: transport
+        pcap: tcp-wscale-1-4.pcap
+        hide:
+            2:
+            - Window
+            3:
+            - Window
+        name: Impact of the window scale option
+        feedback:
+            Window: Remember that the client announces in its SYN segment the scaling
+                factor that it will use to announce its windows later. With a window
+                scaling of 9, this implies that the actual window (in bytes), must
+                be divided by :math:`2^9=512` before sending it in the `window` field
+                of the transmitted segments.
+        shuffle-feedback: ''
+        header: 'The window scale option has been correctly negotiated on this connection.
+            Assuming that that the client will use on the entire connection the same
+            window size that it announced in the `SYN`, can you infer the value of
+            the receive window that it will advertise inside its first segments ? '
+        type: network-trace
+        shuffle: false
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+tags:
+    '0':
+        type: 2
+        visible: true
+        name: TCP
+        description: TCP protocol
+        id: ''
+weight: 1.0

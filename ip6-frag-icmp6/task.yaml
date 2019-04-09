@@ -1,0 +1,47 @@
+accessible: true
+author: Olivier Bonaventure
+context: 'IPv6, described in the `IPv6 chapter <http://cnp3book.info.ucl.ac.be/2nd/html/protocols/ipv6.html>`_
+    of `Computer Networking: Principles, Protocols and Practice <http://cnp3book.info.ucl.ac.be/>`_
+    includes a packet fragmentation mechanism that allows to send large packets as
+    a series of fragments.'
+environment: mcq
+evaluate: best
+groups: false
+input_random: '0'
+limits:
+    output: '2'
+    time: '30'
+    memory: '100'
+name: 'IPv6 : packet fragmentation'
+network_grading: false
+order: 35
+problems:
+    test:
+        header: Can you reorder the packet packet fragments that were captured while
+            a host was using `ping6` to verify the reachability of destination `2001:7ab:2::b`
+            with packets that are longer than the MTU ? This packet was sent by a
+            Linux host that sends the first fragment of the packet last.
+        pcap: ip6-frag-9-10.pcap
+        shuffle-feedback: |-
+            The IPv6 Fragment Header is defined in `Section 4.5 <https://tools.ietf.org/html/rfc8200#section-4.5>`_ of `RFC8200 <https://tools.ietf.org/html/rfc8200>`_. It contains three important fields :
+             - the Identification field (all fragments of a packet contain the same identification)
+             - the Offset (for technical reasons, the packet dissector shows it as a low order byte and a high order byte values)
+             - the More flag (which is set to 1 in all fragments except the last one)
+        feedback: {}
+        range: network
+        hide: {}
+        name: Reorder the fragments
+        shuffle: true
+        type: network-trace
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+tags:
+    '0':
+        visible: true
+        type: 2
+        name: IPv6
+        description: IPv6 protocol
+        id: ''
+weight: 1.0

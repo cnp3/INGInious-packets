@@ -1,0 +1,56 @@
+accessible: true
+author: Olivier Bonaventure
+context: |-
+    TCP segments contain flags. These are defined in `Section 3.1 <https://tools.ietf.org/html/rfc793#section-3.1>`_ of `RFC793 <https://tools.ietf.org/html/rfc793>`_.
+
+    The packet trace below corresponds to the establishment of a TCP connection by a client that sent one byte of data and then decided to close the connection immediately.
+environment: mcq
+evaluate: best
+groups: false
+input_random: '0'
+limits:
+    memory: '100'
+    time: '30'
+    output: '2'
+name: Utilisation of the FIN flag
+network_grading: false
+order: 13
+problems:
+    test:
+        range: transport-application
+        pcap: tcp-rfc793-82-89.pcap
+        hide:
+            3:
+            - FIN
+            4:
+            - FIN
+            5:
+            - FIN
+            6:
+            - FIN
+            7:
+            - FIN
+        name: Utilisation of the `FIN` flag
+        feedback:
+            FIN: The `FIN` flag is set in the segment that mark the end of the data
+                transfer on the direction where it is sent. Remember that the `FIN`
+                flag also consumes one sequence number like the `SYN` one and that
+                it is only set once by the client before it is acknowledged and then
+                once by the server.
+        shuffle-feedback: ''
+        header: In this trace, can you infer which segments had their `FIN` flag set
+            ?
+        type: network-trace
+        shuffle: false
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+tags:
+    '0':
+        type: 2
+        visible: true
+        name: TCP
+        description: TCP protocol
+        id: ''
+weight: 1.0

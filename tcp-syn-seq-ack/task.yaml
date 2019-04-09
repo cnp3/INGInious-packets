@@ -1,0 +1,49 @@
+accessible: true
+author: Olivier Bonaventure
+context: 'The TCP header, shown in the `TCP chapter <http://cnp3book.info.ucl.ac.be/2nd/html/protocols/tcp.html>`_
+    of `Computer Networking: Principles, Protocols and Practice <http://cnp3book.info.ucl.ac.be/>`_
+    contains a sequence number and an acknowledgement number. The three segments below
+    correspond to the three-way handshake that is used to establish  a TCP connection.'
+environment: mcq
+evaluate: best
+groups: false
+input_random: '0'
+limits:
+    memory: '100'
+    time: '30'
+    output: '2'
+name: The acknowledgement numbers in the three-way-handshake used by TCP
+network_grading: false
+order: 4
+problems:
+    test:
+        range: transport
+        pcap: tcp-rfc793-70-72.pcap
+        hide:
+            1:
+            - Acknowledgment Number
+            2:
+            - Acknowledgment Number
+        name: Acknowledgement numbers
+        feedback:
+            Acknowledgement Number: |-
+                The Acknowledgement Number is defined in `Section 3.1 of RFC793 <https://tools.ietf.org/html/rfc793>`_   as follows: *If the ACK control bit is set this field contains the value of the
+                  next sequence number the sender of the segment is expecting to
+                  receive.  Once a connection is established this is always sent.* Remember that during the three-way-handshake, the transmission of the SYN bit consumes one sequence number.
+        shuffle-feedback: ''
+        header: Can you infer the acknowledgement numbers of the second and third
+            TCP segments exchanged in the three-way-handshake below ?
+        type: network-trace
+        shuffle: false
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+tags:
+    '0':
+        type: 2
+        visible: true
+        name: TCP
+        description: TCP protocol
+        id: ''
+weight: 1.0

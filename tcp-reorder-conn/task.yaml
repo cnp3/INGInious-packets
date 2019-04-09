@@ -1,0 +1,49 @@
+accessible: true
+author: Olivier Bonaventure
+context: 'A TCP connection, as explained in the `TCP chapter <http://cnp3book.info.ucl.ac.be/2nd/html/protocols/tcp.html>`_
+    of `Computer Networking: Principles, Protocols and Practice <http://cnp3book.info.ucl.ac.be/>`_
+    starts with a three-way-handshake and ends with the exchange of segments with
+    the `FIN` flag set.'
+environment: mcq
+evaluate: best
+groups: false
+input_random: '0'
+limits:
+    memory: '100'
+    time: '30'
+    output: '2'
+name: Reordering the segments exchanged on a connection
+network_grading: false
+order: 11
+problems:
+    test:
+        range: transport-application
+        pcap: tcp-rfc793-82-89.pcap
+        hide: {}
+        name: Reorder the entire connection
+        feedback: {}
+        shuffle-feedback: There are a few things that you need to remember to answer
+            this question correctly. First, a connection always starts with a three-way
+            handshake and the first two segments have their `SYN` flag set. This should
+            allow you to correctly reorder the first three segments. Then, the client
+            sends one byte (this is the only segment that carries data in the trace)
+            and the server acknowledges it. The connection ends with the exchange
+            of three segments, two of them have their `FIN` flag set.
+        header: During this connection, the client opens a connection to the server
+            that listens on port 1234. It then sends a single byte of data that was
+            acknowledged by the server and then decided to terminate the connection.
+            Can you reorder all the segments exchanged on this connection ?
+        type: network-trace
+        shuffle: true
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+tags:
+    '0':
+        type: 2
+        visible: true
+        name: TCP
+        description: TCP protocol
+        id: ''
+weight: 1.0

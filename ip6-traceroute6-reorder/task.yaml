@@ -1,0 +1,40 @@
+accessible: true
+author: Olivier Bonaventure
+context: |
+    ICMPv6, described in the `IPv6 chapter <http://cnp3book.info.ucl.ac.be/2nd/html/protocols/ipv6.html#icmp-version-6>`_ of `Computer Networking: Principles, Protocols and Practice <http://cnp3book.info.ucl.ac.be/>`_ is a companion protocol for IPv6 that is used for various functions including network debugging. `traceroute6` is a popular debugging tool that allows to trace the path towards a destination.
+environment: mcq
+evaluate: best
+groups: false
+input_random: '0'
+limits:
+    output: '2'
+    time: '30'
+    memory: '100'
+name: 'IPv6 : traceroute6'
+network_grading: false
+order: 39
+problems:
+    test:
+        header: '`traceroute6` sends UDP segments to probe a path. Can you reorder
+            them in this packet trace ?'
+        pcap: ip6-traceroute6-udp.pcap
+        shuffle-feedback: Remember that `traceroute6` first sends a packet with a
+            Hop Limit set to 1, then 2, then 3 ...
+        feedback: {}
+        range: network-transport
+        hide: {}
+        name: Reorder UDP segments
+        shuffle: true
+        type: network-trace
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+tags:
+    '0':
+        visible: true
+        type: 2
+        name: IPv6
+        description: IPv6 protocol
+        id: ''
+weight: 1.0

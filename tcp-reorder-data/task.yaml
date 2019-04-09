@@ -1,0 +1,45 @@
+accessible: true
+author: Olivier Bonaventure
+context: 'TCP, as explained in the `TCP chapter <http://cnp3book.info.ucl.ac.be/2nd/html/protocols/tcp.html>`_
+    of `Computer Networking: Principles, Protocols and Practice <http://cnp3book.info.ucl.ac.be/>`_
+    includes a sequence number in each segment that carries data.'
+environment: mcq
+evaluate: best
+groups: false
+input_random: '0'
+limits:
+    memory: '100'
+    time: '30'
+    output: '2'
+name: Reordering the segments exchanged on a connection
+network_grading: false
+order: 12
+problems:
+    test:
+        range: transport-application
+        pcap: tcp-rfc793-26-34.pcap
+        hide: {}
+        name: Reorder the segments
+        feedback: {}
+        shuffle-feedback: Obviously, you need to look at the sequence numbers and
+            the acknowledgements. The server listens on port 1234. If you are a bit
+            lost, you can look at the data contained in the TCP segments sent by the
+            client, their payload could help you...
+        header: During this connection, the client sent some data that was acknowledged
+            by the server. Can you reorder the segments based on their sequence numbers
+            and acknowledgements ? The trace starts at the third ack of the three-way
+            handshake sent by the client to the server.
+        type: network-trace
+        shuffle: true
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+tags:
+    '0':
+        type: 2
+        visible: true
+        name: TCP
+        description: TCP protocol
+        id: ''
+weight: 1.0

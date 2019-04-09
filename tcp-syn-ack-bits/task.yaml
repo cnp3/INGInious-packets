@@ -1,0 +1,62 @@
+accessible: true
+author: Olivier Bonaventure
+context: 'The TCP header, shown in the `TCP chapter <http://cnp3book.info.ucl.ac.be/2nd/html/protocols/tcp.html>`_
+    of `Computer Networking: Principles, Protocols and Practice <http://cnp3book.info.ucl.ac.be/>`_
+    contains several flags, including the `SYN` and the `ACK` flags. These two flags
+    play an important role during the establishment of a connection. The three segments
+    below correspond to the three-way handshake that is used to establish  a TCP connection.'
+environment: mcq
+evaluate: best
+groups: false
+input_random: '0'
+limits:
+    memory: '100'
+    time: '30'
+    output: '2'
+name: Utilisation of the SYN and ACK flags during the three-way-handshake used by
+    TCP
+network_grading: false
+order: 6
+problems:
+    test:
+        range: transport
+        pcap: tcp-rfc793-24-26.pcap
+        hide:
+            0:
+            - SYN
+            - ACK
+            1:
+            - SYN
+            - ACK
+            2:
+            - SYN
+            - ACK
+        name: Acknowledgement numbers
+        feedback:
+            ACK: 'The `ACK` must be set when the TCP header contains a valid acknowledgement
+                number. In practice, the only segment that does not contain a valid
+                acknowledgement number is the initial segment sent by the client to
+                create a connection (in some cases, it is also possible to observe
+                a `RST` segment that does not contain the `ACK` flag, but this is
+                rare) '
+            SYN: The `SYN` flag must only be set in the first segment sent by a host
+                when establishing a TCP connection. Once the initial `SYN` has been
+                acknowledged, this flag must remain reset during the entire lifetime
+                of the connection.
+        shuffle-feedback: ''
+        header: Can you infer the value of the `SYN` and `ACK` flags in the three
+            segments below ?
+        type: network-trace
+        shuffle: false
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+tags:
+    '0':
+        type: 2
+        visible: true
+        name: TCP
+        description: TCP protocol
+        id: ''
+weight: 1.0

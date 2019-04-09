@@ -1,0 +1,59 @@
+accessible: true
+author: Olivier Bonaventure
+context: 'The TCP header, shown in the `TCP chapter <http://cnp3book.info.ucl.ac.be/2nd/html/protocols/tcp.html>`_
+    of `Computer Networking: Principles, Protocols and Practice <http://cnp3book.info.ucl.ac.be/>`_
+    contains a source port and a destination port. The two segments below correspond
+    to the beginning of a TCP connection.'
+environment: mcq
+evaluate: best
+groups: false
+input_random: '0'
+limits:
+    memory: '100'
+    time: '30'
+    output: '2'
+name: The source and destination ports in the TCP headers
+network_grading: false
+order: 3
+problems:
+    test:
+        range: transport
+        pcap: tcp-rfc793-50-51.pcap
+        hide:
+            0:
+            - Source Port
+            - Destination Port
+        name: TCP source and destination ports
+        feedback:
+            Destination Port: The Destination Port field is defined in `Section 3.1
+                of RFC793 <https://tools.ietf.org/html/rfc793>`_  In the segment sent
+                by the client, the Destination Port corresponds to the service that
+                is requested on the server. IANA maintains a list of registered port
+                numbers at `https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml  <https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml>`_
+                When the server replies, the Destination Port of the request is copied
+                in the Source Port of the response.
+            Source Port: The Source Port field is defined in `Section 3.1 of RFC793
+                <https://tools.ietf.org/html/rfc793>`_   It is usually a unique   port
+                number that is chosen by the client stack among the unused port numbers.
+                Port numbers that are lower than 1024 play a special role and can
+                only be assigned by processes that have administrator privileges.
+                When the server replies, the Source Port of the request is copied
+                in the Destination Port of the response.
+        shuffle-feedback: ''
+        header: The first TCP segment was sent by a client to a server to establish
+            a connection. From the response returned by the server, can you infer
+            the source and destination ports used in the first segment ?
+        type: network-trace
+        shuffle: false
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+tags:
+    '0':
+        type: 2
+        visible: true
+        name: TCP
+        description: TCP protocol
+        id: ''
+weight: 1.0

@@ -1,0 +1,48 @@
+accessible: true
+author: Olivier Bonaventure
+context: 'The IPv6 header, shown in the `IPv6 chapter <http://cnp3book.info.ucl.ac.be/2nd/html/protocols/ipv6.html#ipv6-packet-format>`_
+    of `Computer Networking: Principles, Protocols and Practice <http://cnp3book.info.ucl.ac.be/>`_
+    contains a Next Header field that usually indicates the protocol used for the
+    packet payload. '
+environment: mcq
+evaluate: best
+groups: false
+input_random: '0'
+limits:
+    output: '2'
+    time: '30'
+    memory: '100'
+name: 'IPv6 : the next header'
+network_grading: false
+order: 32
+problems:
+    test:
+        header: 'Can you infer the Next Header field of this packet knowing that it
+            contains a UDP segment. '
+        pcap: ip6-packet409.pcap
+        shuffle-feedback: ''
+        feedback:
+            Next Header: |-
+                The Next Header is defined in `Section 3 of RFC8200 <https://tools.ietf.org/html/rfc8200>`_   as follows: *8-bit selector.  Identifies the type of header
+                                        immediately following the IPv6 header.  Uses
+                                        the same values as the IPv4 Protocol field
+                                        [IANA-PN].* The assigned protocol numbers are defined in `https://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml <https://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml>`_
+        range: network-transport
+        hide:
+            0:
+            - Next Header
+        name: Next Header for a packet carrying a UDP segment
+        type: network-trace
+        shuffle: false
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+tags:
+    '0':
+        visible: true
+        type: 2
+        name: IPv6
+        description: IPv6 protocol
+        id: ''
+weight: 1.0

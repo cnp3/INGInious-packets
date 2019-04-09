@@ -1,0 +1,50 @@
+accessible: true
+author: Olivier Bonaventure
+context: 'The TCP header, shown in the `TCP chapter <http://cnp3book.info.ucl.ac.be/2nd/html/protocols/tcp.html>`_
+    of `Computer Networking: Principles, Protocols and Practice <http://cnp3book.info.ucl.ac.be/>`_
+    contains a sequence number. The segments below correspond to the beginning of
+    a TCP connection.'
+environment: mcq
+evaluate: best
+groups: false
+input_random: '0'
+limits:
+    time: '30'
+    output: '2'
+    memory: '100'
+name: The TCP sequence numbers used during the data transfer
+network_grading: false
+order: 5
+problems:
+    test:
+        hide:
+            3:
+            - Sequence Number
+            5:
+            - Sequence Number
+        pcap: tcp-rfc793-4-10b.pcap
+        name: Sequence numbers
+        header: Can you infer the sequence numbers of the two segments that transfer
+            data in the trace below ?
+        range: transport
+        feedback:
+            Sequence Number: The Sequence Number is defined in `Section 3.3 of RFC793
+                <https://tools.ietf.org/html/rfc793>`_   Remember that on a TCP connection,
+                the `SYN` bit and each byte transferred consumes one sequence number.
+                Look at the sources and destination addresses to determine the direction
+                of the data transfer for each packet. Remember that each byte transported
+                in the previous segment consumes one sequence number.
+        type: network-trace
+        shuffle: false
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+tags:
+    '0':
+        visible: true
+        name: TCP
+        description: TCP protocol
+        type: 2
+        id: ''
+weight: 1.0

@@ -1,0 +1,51 @@
+accessible: true
+author: Olivier Bonaventure
+context: 'The TCP Timestamp option, defined in `RFC1323 <https://tools.ietf.org/html/rfc1323>`_
+    and described in the `TCP chapter <http://cnp3book.info.ucl.ac.be/2nd/html/protocols/tcp.html>`_
+    of `Computer Networking: Principles, Protocols and Practice <http://cnp3book.info.ucl.ac.be/>`_
+    allows endhosts to exchange timestamp information.'
+environment: mcq
+evaluate: best
+groups: false
+input_random: '0'
+limits:
+    memory: '100'
+    time: '30'
+    output: '2'
+name: The TCP Timestamp option
+network_grading: false
+order: 14
+problems:
+    test:
+        range: transport
+        pcap: tcp-timstamp-1-2.pcap
+        hide:
+            0:
+            - TS Echo Reply
+            1:
+            - TS Echo Reply
+        name: Negotiation of the TCP Timestamp option
+        feedback:
+            TS Echo Reply: |-
+                The TS Echo Reply field is defined in `Section 3.2 of RFC1323 <https://tools.ietf.org/html/rfc1323>`_  as follows: *         The Timestamp Echo Reply field (TSecr) is only valid if the ACK
+                       bit is set in the TCP header; if it is valid, it echos a times-
+                       tamp value that was sent by the remote TCP in the TSval field
+                       of a Timestamps option.  When TSecr is not valid, its value
+                       must be zero. *
+        shuffle-feedback: ''
+        header: Assuming that the server supports the timestamp option, can you predict
+            the value of the TS Echo Reply field in both segments ?
+        type: network-trace
+        shuffle: false
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+tags:
+    '0':
+        type: 2
+        visible: true
+        name: TCP
+        description: TCP protocol
+        id: ''
+weight: 1.0
