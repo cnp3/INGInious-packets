@@ -1,0 +1,15 @@
+language: python
+python:
+  - '3.6'
+services:
+  - mongodb
+  - docker
+install:
+  - pip3 install git+https://github.com/UCL-INGI/INGInious
+  - pip3 install git+https://github.com/CNP3/INGInious-problems-network-trace
+  - docker pull ingi/inginious-c-base
+  - docker pull ingi/inginious-c-default
+before_script:
+  - python3 .travis_setup.py
+script:
+  - inginious-autotest . CNP3 -l --ptype inginious-problems-network-trace.DisplayableNetworkTraceProblem
