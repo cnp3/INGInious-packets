@@ -1,0 +1,968 @@
+# French translations for PROJECT.
+# Copyright (C) 2019 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2019-10-17 12:10+0200\n"
+"PO-Revision-Date: 2019-10-14 15:06+0200\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: fr\n"
+"Language-Team: fr <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n > 1)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#. name
+#: course.yaml
+msgid "CNP3"
+msgstr ""
+
+#. author
+#: ip6-frag-icmp6/task.yaml ip6-hop/task.yaml ip6-icmpv6/task.yaml
+#: ip6-ping6-frag1/task.yaml ip6-ping6-frag2/task.yaml
+#: ip6-ping6-reorder/task.yaml ip6-ping6/task.yaml ip6-tcp/task.yaml
+#: ip6-traceroute6-hop/task.yaml ip6-traceroute6-reorder/task.yaml
+#: ip6-udp/task.yaml tcp-data-ack/task.yaml tcp-data-ack2/task.yaml
+#: tcp-fin/task.yaml tcp-hl-syn/task.yaml tcp-infer-ack/task.yaml
+#: tcp-reorder-conn/task.yaml tcp-reorder-data/task.yaml
+#: tcp-reorder-twh/task.yaml tcp-reorder-twh2/task.yaml
+#: tcp-syn-ack-bits/task.yaml tcp-syn-port/task.yaml tcp-syn-seq-ack/task.yaml
+#: tcp-syn-timestamp/task.yaml tcp-syn/task.yaml tcp-wscale/task.yaml
+msgid "Olivier Bonaventure"
+msgstr ""
+
+#. context
+#: ip6-frag-icmp6/task.yaml
+msgid ""
+"IPv6, described in the `IPv6 chapter "
+"<http://cnp3book.info.ucl.ac.be/2nd/html/protocols/ipv6.html>`_ of "
+"`Computer Networking: Principles, Protocols and Practice "
+"<http://cnp3book.info.ucl.ac.be/>`_ includes a packet fragmentation "
+"mechanism that allows to send large packets as a series of fragments."
+msgstr ""
+
+#. name
+#: ip6-frag-icmp6/task.yaml ip6-ping6-frag2/task.yaml
+msgid "IPv6 : packet fragmentation"
+msgstr ""
+
+#. name, test, name
+#: ip6-frag-icmp6/task.yaml
+msgid "Reorder the fragments"
+msgstr ""
+
+#. name, test, header
+#: ip6-frag-icmp6/task.yaml
+msgid ""
+"Can you reorder the packet packet fragments that were captured while a "
+"host was using `ping6` to verify the reachability of destination "
+"`2001:7ab:2::b` with packets that are longer than the MTU ? This packet "
+"was sent by a Linux host that sends the first fragment of the packet "
+"last."
+msgstr ""
+
+#. context
+#: ip6-hop/task.yaml
+msgid ""
+"IPv6 is described in the `IPv6 chapter "
+"<http://cnp3book.info.ucl.ac.be/2nd/html/protocols/ipv6.html>`_ of "
+"`Computer Networking: Principles, Protocols and Practice "
+"<http://cnp3book.info.ucl.ac.be/>`_. When a router forwards a packet, it "
+"updates some of its fields. "
+msgstr ""
+
+#. name
+#: ip6-hop/task.yaml
+msgid "IPv6 : packet forwarding"
+msgstr ""
+
+#. name, test, name
+#: ip6-hop/task.yaml
+msgid "Packet forwarding"
+msgstr ""
+
+#. name, test, header
+#: ip6-hop/task.yaml
+msgid ""
+"The first packet was captured on an ingress interface of a router. The "
+"second was captured on its egress interface after having been forwarded. "
+"Can you infer the different fields of the forwarded  packet ?"
+msgstr ""
+
+#. name, test, Destination Address
+#: ip6-hop/task.yaml
+msgid ""
+"A router never changes the Destination Address of the packets that it "
+"forwards."
+msgstr ""
+
+#. name, test, Hop Limit
+#: ip6-hop/task.yaml
+msgid "A router always decrements the Hop Limit of the packets that it forwards."
+msgstr ""
+
+#. name, test, Next Header
+#: ip6-hop/task.yaml
+msgid "A router never changes the Next Header of the packets that it forwards."
+msgstr ""
+
+#. name, test, Payload Length
+#: ip6-hop/task.yaml
+msgid "A router never changes the payload length of the packets that it forwards."
+msgstr ""
+
+#. name, test, Source Address
+#: ip6-hop/task.yaml
+msgid "A router never changes the Source Address of the packets that it forwards."
+msgstr ""
+
+#. context
+#: ip6-icmpv6/task.yaml ip6-tcp/task.yaml ip6-udp/task.yaml
+msgid ""
+"The IPv6 header, shown in the `IPv6 chapter "
+"<http://cnp3book.info.ucl.ac.be/2nd/html/protocols/ipv6.html#ipv6-packet-"
+"format>`_ of `Computer Networking: Principles, Protocols and Practice "
+"<http://cnp3book.info.ucl.ac.be/>`_ contains a Next Header field that "
+"usually indicates the protocol used for the packet payload. "
+msgstr ""
+
+#. name
+#: ip6-icmpv6/task.yaml ip6-tcp/task.yaml ip6-udp/task.yaml
+msgid "IPv6 : the next header"
+msgstr ""
+
+#. name, test, name
+#: ip6-icmpv6/task.yaml
+msgid "Next Header for a packet carrying an ICMPv6 message"
+msgstr ""
+
+#. name, test, header
+#: ip6-icmpv6/task.yaml
+msgid ""
+"Can you infer the Next Header field of this packet knowing that it "
+"contains an ICMPv6 message ?"
+msgstr ""
+
+#. name, test, Next Header
+#: ip6-icmpv6/task.yaml
+msgid ""
+"The Next Header is defined in `Section 3 of RFC8200 "
+"<https://tools.ietf.org/html/rfc8200>`_   as follows:  *8-bit selector.  "
+"Identifies the type of header immediately following the IPv6 header.  "
+"Uses the same values as the IPv4 Protocol field [IANA-PN].*  The assigned"
+" protocol numbers are defined in `https://www.iana.org/assignments"
+"/protocol-numbers/protocol-numbers.xhtml "
+"<https://www.iana.org/assignments/protocol-numbers/protocol-"
+"numbers.xhtml>`_ Note that ICMP and ICMPv6 are not the same protocol."
+msgstr ""
+
+#. context
+#: ip6-ping6-reorder/task.yaml ip6-ping6/task.yaml
+msgid ""
+"ICMPv6, described in the `IPv6 chapter "
+"<http://cnp3book.info.ucl.ac.be/2nd/html/protocols/ipv6.html#icmp-"
+"version-6>`_ of `Computer Networking: Principles, Protocols and Practice "
+"<http://cnp3book.info.ucl.ac.be/>`_ is a companion protocol for IPv6 that"
+" is used for various functions including network debugging. `ping6` is a "
+"popular debugging tool that allows to verify whether a remote host is up "
+"and running. For this, it sends an ICMPv6 Echo request that contains some"
+" information and waits for an ICMPv6 Echo reply."
+msgstr ""
+
+#. name
+#: ip6-ping6-reorder/task.yaml ip6-ping6/task.yaml
+msgid "IPv6 : ping6"
+msgstr ""
+
+#. name, test, name
+#: ip6-ping6/task.yaml
+msgid "ping6 messages"
+msgstr ""
+
+#. name, test, header
+#: ip6-ping6/task.yaml
+msgid ""
+"Can you infer the Identifier and the sequence fields of the ICMPv6 Echo "
+"response ?"
+msgstr ""
+
+#. name, test, Identifier
+#: ip6-ping6/task.yaml
+msgid ""
+"The Identifier field is defined in `Section 4.1 "
+"<https://tools.ietf.org/html/rfc4443#section-4.1>`_ of `RFC4443 "
+"<https://tools.ietf.org/html/rfc4443>`_. It is sent to a specific value "
+"by the sender of the Echo Request message that verifies that the Echo "
+"Reply messages that it receives also contain this value."
+msgstr ""
+
+#. name, test, Sequence Number
+#: ip6-ping6/task.yaml
+msgid ""
+"The Sequence Number field is defined in `Section 4.1 "
+"<https://tools.ietf.org/html/rfc4443#section-4.1>`_ of `RFC4443 "
+"<https://tools.ietf.org/html/rfc4443>`_. It is sent to a specific value "
+"by the sender of the Echo Request message that verifies that the Echo "
+"Reply messages that it receives also contain this value."
+msgstr ""
+
+#. context
+#: ip6-ping6-frag1/task.yaml
+msgid ""
+"ICMPv6, described in the `IPv6 chapter "
+"<http://cnp3book.info.ucl.ac.be/2nd/html/protocols/ipv6.html#icmp-"
+"version-6>`_ of `Computer Networking: Principles, Protocols and Practice "
+"<http://cnp3book.info.ucl.ac.be/>`_ is a companion protocol for IPv6 that"
+" is used for various functions including network debugging. `ping6` is a "
+"popular debugging tool that allows to verify whether a remote host is up "
+"and running. For this, it sends an ICMPv6 Echo request that contains some"
+" information and waits for an ICMPv6 Echo reply. We use it to observe "
+"IPv6 packet fragmentation by sending large ICMPv6 messages."
+msgstr ""
+
+#. name
+#: ip6-ping6-frag1/task.yaml
+msgid "IPv6 : ping6 with packet fragmentation"
+msgstr ""
+
+#. name, test, name
+#: ip6-ping6-frag1/task.yaml
+msgid "Large ICMPv6 Echo Request"
+msgstr ""
+
+#. name, test, header
+#: ip6-ping6-frag1/task.yaml
+msgid ""
+"Can you infer the missing fields of the second packet by looking at the "
+"first one ?"
+msgstr ""
+
+#. name, test, Identification
+#: ip6-ping6-frag1/task.yaml
+msgid "All fragments of a packet carry the same Identification field."
+msgstr ""
+
+#. name, test, M flag
+#: ip6-ping6-frag1/task.yaml
+msgid "The `M flag` is set to 1 in all fragments except the last one."
+msgstr ""
+
+#. context
+#: ip6-ping6-frag2/task.yaml
+msgid ""
+"IPv6, described in the `IPv6 chapter "
+"<http://cnp3book.info.ucl.ac.be/2nd/html/protocols/ipv6.html#icmp-"
+"version-6>`_ of `Computer Networking: Principles, Protocols and Practice "
+"<http://cnp3book.info.ucl.ac.be/>`_ can fragment packets that are larger "
+"than the MTU."
+msgstr ""
+
+#. name, test, name
+#: ip6-ping6-frag2/task.yaml
+msgid "Reorder IPv6 packet fragments"
+msgstr ""
+
+#. name, test, header
+#: ip6-ping6-frag2/task.yaml
+msgid ""
+"Can you reorder the IPv6 fragments below ?\n"
+"\n"
+"Note that for technical reasons, the packet dissector shows the Offset "
+"field as two different bytes :\n"
+" - the low order byte (Offset LB)\n"
+" - the high order byte (Offset UB)\n"
+"\n"
+"This implies that the Offset is :math:`LB+256*UB`."
+msgstr ""
+
+#. name, test, name
+#: ip6-ping6-reorder/task.yaml
+msgid "Reorder ICMPv6 messages"
+msgstr ""
+
+#. name, test, header
+#: ip6-ping6-reorder/task.yaml
+msgid ""
+"Can you reorder the packets that were captured while a host was using "
+"`ping6` to verify the reachability of destination `2001:6a8:3081:1::2` ?"
+msgstr ""
+
+#. name, test, name
+#: ip6-tcp/task.yaml
+msgid "Next Header for a packet carrying a TCP segment"
+msgstr ""
+
+#. name, test, header
+#: ip6-tcp/task.yaml
+msgid ""
+"Can you infer the Next Header field of this packet knowing that it "
+"contains a TCP segment. "
+msgstr ""
+
+#. name, test, Next Header
+#: ip6-tcp/task.yaml ip6-udp/task.yaml
+msgid ""
+"The Next Header is defined in `Section 3 of RFC8200 "
+"<https://tools.ietf.org/html/rfc8200>`_   as follows: *8-bit selector.  "
+"Identifies the type of header\n"
+"                        immediately following the IPv6 header.  Uses\n"
+"                        the same values as the IPv4 Protocol field\n"
+"                        [IANA-PN].* The assigned protocol numbers are "
+"defined in `https://www.iana.org/assignments/protocol-numbers/protocol-"
+"numbers.xhtml <https://www.iana.org/assignments/protocol-numbers"
+"/protocol-numbers.xhtml>`_"
+msgstr ""
+
+#. context
+#: ip6-traceroute6-hop/task.yaml ip6-traceroute6-reorder/task.yaml
+msgid ""
+"ICMPv6, described in the `IPv6 chapter "
+"<http://cnp3book.info.ucl.ac.be/2nd/html/protocols/ipv6.html#icmp-"
+"version-6>`_ of `Computer Networking: Principles, Protocols and Practice "
+"<http://cnp3book.info.ucl.ac.be/>`_ is a companion protocol for IPv6 that"
+" is used for various functions including network debugging. `traceroute6`"
+" is a popular debugging tool that allows to trace the path towards a "
+"destination.\n"
+msgstr ""
+
+#. name
+#: ip6-traceroute6-hop/task.yaml
+msgid "IPv6 : Hop Limit field with traceroute6 "
+msgstr ""
+
+#. name, test, name
+#: ip6-traceroute6-hop/task.yaml
+msgid "Usage of Hop Limit by traceroute6"
+msgstr ""
+
+#. name, test, header
+#: ip6-traceroute6-hop/task.yaml
+msgid ""
+"Can you infer the Hop Limit value of the packets captured during the "
+"following traceroute6:\n"
+"\n"
+".. code:: console\n"
+"\n"
+"   traceroute6 -q 1 -n www.ietf.org\n"
+"   traceroute6: Warning: www.ietf.org.cdn.cloudflare.net has multiple "
+"addresses; using 2606:4700:10::6814:155\n"
+"   traceroute6 to www.ietf.org.cdn.cloudflare.net "
+"(2606:4700:10::6814:155) from 2a02:2788:484:59e:2c1c:849e:f74f:e233, 64 "
+"hops max, 12 byte packets\n"
+"   1  2a02:2788:484:59e:a221:b7ff:fed8:aa90  2.415 ms\n"
+"   2  2a02:2788:480::1  8.138 ms\n"
+"   3  2a02:2788:480:2::1  9.125 ms\n"
+"   4  2a02:2788:ffff:1b::1  9.757 ms\n"
+"   5  2001:7f8:26::a501:3335:1  7.960 ms\n"
+"   6  2400:cb00:78:1024::a29e:e959  7.934 ms"
+msgstr ""
+
+#. name, test, Hop Limit
+#: ip6-traceroute6-hop/task.yaml
+msgid ""
+"`traceroute6` first sends a packet with a Hop Limit set to 1 to force the"
+" first router on the path to send an ICMPv6 Hop Limit exceeded message, "
+"then to 2, ..."
+msgstr ""
+
+#. name
+#: ip6-traceroute6-reorder/task.yaml
+msgid "IPv6 : traceroute6"
+msgstr ""
+
+#. name, test, name
+#: ip6-traceroute6-reorder/task.yaml
+msgid "Reorder UDP segments"
+msgstr ""
+
+#. name, test, header
+#: ip6-traceroute6-reorder/task.yaml
+msgid ""
+"`traceroute6` sends UDP segments to probe a path. Can you reorder them in"
+" this packet trace ?"
+msgstr ""
+
+#. name, test, name
+#: ip6-udp/task.yaml
+msgid "Next Header for a packet carrying a UDP segment"
+msgstr ""
+
+#. name, test, header
+#: ip6-udp/task.yaml
+msgid ""
+"Can you infer the Next Header field of this packet knowing that it "
+"contains a UDP segment. "
+msgstr ""
+
+#. context
+#: tcp-data-ack/task.yaml
+msgid ""
+"The TCP header, shown in the `TCP chapter "
+"<http://cnp3book.info.ucl.ac.be/2nd/html/protocols/tcp.html>`_ of "
+"`Computer Networking: Principles, Protocols and Practice "
+"<http://cnp3book.info.ucl.ac.be/>`_ contains a sequence number. The "
+"segments below correspond to the beginning of a TCP connection."
+msgstr ""
+
+#. name
+#: tcp-data-ack/task.yaml
+msgid "The TCP sequence numbers used during the data transfer"
+msgstr ""
+
+#. name, test, name
+#: tcp-data-ack/task.yaml tcp-data-ack2/task.yaml
+msgid "Sequence numbers"
+msgstr ""
+
+#. name, test, header
+#: tcp-data-ack/task.yaml
+msgid ""
+"Can you infer the sequence numbers of the two segments that transfer data"
+" in the trace below ?"
+msgstr ""
+
+#. name, test, Sequence Number
+#: tcp-data-ack/task.yaml
+msgid ""
+"The Sequence Number is defined in `Section 3.3 of RFC793 "
+"<https://tools.ietf.org/html/rfc793>`_   Remember that on a TCP "
+"connection, the `SYN` bit and each byte transferred consumes one sequence"
+" number. Look at the sources and destination addresses to determine the "
+"direction of the data transfer for each packet. Remember that each byte "
+"transported in the previous segment consumes one sequence number."
+msgstr ""
+
+#. context
+#: tcp-data-ack2/task.yaml
+msgid ""
+"The TCP header, shown in the `TCP chapter "
+"<http://cnp3book.info.ucl.ac.be/2nd/html/protocols/tcp.html>`_ of "
+"`Computer Networking: Principles, Protocols and Practice "
+"<http://cnp3book.info.ucl.ac.be/>`_ contains an acknowledgement number. "
+msgstr ""
+
+#. name
+#: tcp-data-ack2/task.yaml
+msgid "TCP acknowledgements"
+msgstr ""
+
+#. name, test, header
+#: tcp-data-ack2/task.yaml
+msgid ""
+"A data transfer has started with a three-way handshake that is not shown "
+"in this trace. Can you infer the acknowledgements numbers of the two "
+"missing segments in the trace below ?"
+msgstr ""
+
+#. name, test, Acknowledgment Number
+#: tcp-data-ack2/task.yaml
+msgid ""
+"The Acknowledgement Number is defined in `Section 3.3 of RFC793 "
+"<https://tools.ietf.org/html/rfc793>`_   Remember that on a TCP "
+"connection, acknowledgements are always cumulative and they always "
+"indicate the next expected sequence number."
+msgstr ""
+
+#. context
+#: tcp-fin/task.yaml
+msgid ""
+"TCP segments contain flags. These are defined in `Section 3.1 "
+"<https://tools.ietf.org/html/rfc793#section-3.1>`_ of `RFC793 "
+"<https://tools.ietf.org/html/rfc793>`_.\n"
+"\n"
+"The packet trace below corresponds to the establishment of a TCP "
+"connection by a client that sent one byte of data and then decided to "
+"close the connection immediately."
+msgstr ""
+
+#. name
+#: tcp-fin/task.yaml
+msgid "Utilisation of the FIN flag"
+msgstr ""
+
+#. name, test, name
+#: tcp-fin/task.yaml
+msgid "Utilisation of the `FIN` flag"
+msgstr ""
+
+#. name, test, header
+#: tcp-fin/task.yaml
+msgid "In this trace, can you infer which segments had their `FIN` flag set ?"
+msgstr ""
+
+#. name, test, FIN
+#: tcp-fin/task.yaml
+msgid ""
+"The `FIN` flag is set in the segment that mark the end of the data "
+"transfer on the direction where it is sent. Remember that the `FIN` flag "
+"also consumes one sequence number like the `SYN` one and that it is only "
+"set once by the client before it is acknowledged and then once by the "
+"server."
+msgstr ""
+
+#. context
+#: tcp-hl-syn/task.yaml
+msgid ""
+"The TCP header, shown in the `TCP chapter "
+"<http://cnp3book.info.ucl.ac.be/2nd/html/protocols/tcp.html>`_ of "
+"`Computer Networking: Principles, Protocols and Practice "
+"<http://cnp3book.info.ucl.ac.be/>`_ contains a TCP Header Length or Data "
+"Offset field that indicates the start of the payload of a TCP segment. "
+msgstr ""
+
+#. name
+#: tcp-hl-syn/task.yaml
+msgid "The TCP header length"
+msgstr ""
+
+#. name, test, name
+#: tcp-hl-syn/task.yaml
+msgid "TCP Header Length"
+msgstr ""
+
+#. name, test, header
+#: tcp-hl-syn/task.yaml
+msgid ""
+"The TCP segment was sent inside an IPv6 packet whose payload length is "
+"set to 34 bytes. Can you recompute its TCP Header Length  ?"
+msgstr ""
+
+#. name, test, Data Offset
+#: tcp-hl-syn/task.yaml
+msgid ""
+"The Data Offset field is defined in `Section 3.1 of RFC793 "
+"<https://tools.ietf.org/html/rfc793>`_ is the length of the TCP header "
+"measured in units of 32 bits words."
+msgstr ""
+
+#. context
+#: tcp-infer-ack/task.yaml
+msgid ""
+"TCP, as explained in the `TCP chapter "
+"<http://cnp3book.info.ucl.ac.be/2nd/html/protocols/tcp.html>`_ of "
+"`Computer Networking: Principles, Protocols and Practice "
+"<http://cnp3book.info.ucl.ac.be/>`_ includes a sequence number in each "
+"segment that carries data and uses acknowledgements."
+msgstr ""
+
+#. name
+#: tcp-infer-ack/task.yaml
+msgid "Inferring acknowledgment numbers"
+msgstr ""
+
+#. name, test, name
+#: tcp-infer-ack/task.yaml
+msgid "Inferring acknowledgement numbers"
+msgstr ""
+
+#. name, test, header
+#: tcp-infer-ack/task.yaml
+msgid ""
+"During this connection, the client sent some data in successive segments "
+"and then the server replied with a an acknowledgement that confirms the "
+"reception of all the previous segments. Can you infer the acknowledgement"
+" number of the segment returned by the server ?"
+msgstr ""
+
+#. context
+#: tcp-reorder-conn/task.yaml
+msgid ""
+"A TCP connection, as explained in the `TCP chapter "
+"<http://cnp3book.info.ucl.ac.be/2nd/html/protocols/tcp.html>`_ of "
+"`Computer Networking: Principles, Protocols and Practice "
+"<http://cnp3book.info.ucl.ac.be/>`_ starts with a three-way-handshake and"
+" ends with the exchange of segments with the `FIN` flag set."
+msgstr ""
+
+#. name
+#: tcp-reorder-conn/task.yaml tcp-reorder-data/task.yaml
+msgid "Reordering the segments exchanged on a connection"
+msgstr ""
+
+#. name, test, name
+#: tcp-reorder-conn/task.yaml
+msgid "Reorder the entire connection"
+msgstr ""
+
+#. name, test, header
+#: tcp-reorder-conn/task.yaml
+msgid ""
+"During this connection, the client opens a connection to the server that "
+"listens on port 1234. It then sends a single byte of data that was "
+"acknowledged by the server and then decided to terminate the connection. "
+"Can you reorder all the segments exchanged on this connection ?"
+msgstr ""
+
+#. context
+#: tcp-reorder-data/task.yaml
+msgid ""
+"TCP, as explained in the `TCP chapter "
+"<http://cnp3book.info.ucl.ac.be/2nd/html/protocols/tcp.html>`_ of "
+"`Computer Networking: Principles, Protocols and Practice "
+"<http://cnp3book.info.ucl.ac.be/>`_ includes a sequence number in each "
+"segment that carries data."
+msgstr ""
+
+#. name, test, name
+#: tcp-reorder-data/task.yaml
+msgid "Reorder the segments"
+msgstr ""
+
+#. name, test, header
+#: tcp-reorder-data/task.yaml
+msgid ""
+"During this connection, the client sent some data that was acknowledged "
+"by the server. Can you reorder the segments based on their sequence "
+"numbers and acknowledgements ? The trace starts at the third ack of the "
+"three-way handshake sent by the client to the server."
+msgstr ""
+
+#. context
+#: tcp-reorder-twh/task.yaml tcp-reorder-twh2/task.yaml
+msgid ""
+"A TCP connection, as explained in the `TCP chapter "
+"<http://cnp3book.info.ucl.ac.be/2nd/html/protocols/tcp.html>`_ of "
+"`Computer Networking: Principles, Protocols and Practice "
+"<http://cnp3book.info.ucl.ac.be/>`_ always starts with a three-way-"
+"handshake. "
+msgstr ""
+
+#. name
+#: tcp-reorder-twh/task.yaml tcp-reorder-twh2/task.yaml
+msgid "Reordering the three-way-handshake"
+msgstr ""
+
+#. name, test, name
+#: tcp-reorder-twh/task.yaml
+msgid "Three-way handshake"
+msgstr ""
+
+#. name, test, header
+#: tcp-reorder-twh/task.yaml
+msgid ""
+"Can you correctly reorder the three segments that are used to establish a"
+" TCP connection ?"
+msgstr ""
+
+#. name, test, name
+#: tcp-reorder-twh2/task.yaml
+msgid "Reorder the three-way-handshake"
+msgstr ""
+
+#. name, test, header
+#: tcp-reorder-twh2/task.yaml
+msgid ""
+"Can you correctly reorder the three segments that are used to establish a"
+" TCP connection and set the `SYN` and `ACK` flags correctly ?"
+msgstr ""
+
+#. name, test, SYN
+#: tcp-reorder-twh2/task.yaml
+msgid ""
+"The first segment of the three-way-handshake is always the one with a "
+"`SYN` flag set and the `ACK` flag reset. The second segment has also the "
+"`SYN` flag set set and acknowledges the first one. The `SYN`flag is never"
+" set in the third segment."
+msgstr ""
+
+#. context
+#: tcp-syn/task.yaml
+msgid ""
+"TCP segments contain flags. These are defined in `Section 3.1 "
+"<https://tools.ietf.org/html/rfc793#section-3.1>`_ of `RFC793 "
+"<https://tools.ietf.org/html/rfc793>`_.\n"
+"\n"
+"The segment below was sent by a client to create a TCP connection towards"
+" a web server. Ingicated the values of the SYN, URG, PSH, ACK, FIN and "
+"RST flags inside this segment (1 means set and 0 means reset)?"
+msgstr ""
+
+#. name
+#: tcp-syn/task.yaml
+msgid "The first TCP segment sent by a client."
+msgstr ""
+
+#. name, test, name
+#: tcp-syn/task.yaml
+msgid "Establishment of a TCP connection"
+msgstr ""
+
+#. name, test, header
+#: tcp-syn/task.yaml
+msgid ""
+"This segment was sent by a client to create a TCP connection towards a "
+"web server. What are the flags that must be set inside this segment ?"
+msgstr ""
+
+#. name, test, ACK
+#: tcp-syn/task.yaml
+msgid ""
+"The ACK flag is only set when the segment contains a valid "
+"acknowledgement number. This is not the case in the initial segment sent "
+"by a client."
+msgstr ""
+
+#. name, test, FIN
+#: tcp-syn/task.yaml
+msgid ""
+"The RST flag is used to gracefully terminate a connection, not to create "
+"one."
+msgstr ""
+
+#. name, test, PSH
+#: tcp-syn/task.yaml
+msgid ""
+"The PSH flag is only associated with data. It is never set in the first "
+"segment sent to create a TCP connection."
+msgstr ""
+
+#. name, test, RST
+#: tcp-syn/task.yaml
+msgid ""
+"The RST flag is used to abruptly terminate a connection, not to create "
+"one."
+msgstr ""
+
+#. name, test, SYN
+#: tcp-syn/task.yaml
+msgid ""
+"The SYN flag is set in the first segment sent to initiate a TCP "
+"connection as described in `Section 3.7 of RFC 793 "
+"<https://tools.ietf.org/html/rfc793#section-3.4>`_."
+msgstr ""
+
+#. name, test, URG
+#: tcp-syn/task.yaml
+msgid ""
+"The URG flag is only set in Urgent data as described in `Section 3.7 of "
+"RFC 793 <https://tools.ietf.org/html/rfc793#section-3.4>`_. It is never "
+"set in the first segment sent to create a TCP connection."
+msgstr ""
+
+#. context
+#: tcp-syn-ack-bits/task.yaml
+msgid ""
+"The TCP header, shown in the `TCP chapter "
+"<http://cnp3book.info.ucl.ac.be/2nd/html/protocols/tcp.html>`_ of "
+"`Computer Networking: Principles, Protocols and Practice "
+"<http://cnp3book.info.ucl.ac.be/>`_ contains several flags, including the"
+" `SYN` and the `ACK` flags. These two flags play an important role during"
+" the establishment of a connection. The three segments below correspond "
+"to the three-way handshake that is used to establish  a TCP connection."
+msgstr ""
+
+#. name
+#: tcp-syn-ack-bits/task.yaml
+msgid ""
+"Utilisation of the SYN and ACK flags during the three-way-handshake used "
+"by TCP"
+msgstr ""
+
+#. name, test, name
+#: tcp-syn-ack-bits/task.yaml tcp-syn-seq-ack/task.yaml
+msgid "Acknowledgement numbers"
+msgstr ""
+
+#. name, test, header
+#: tcp-syn-ack-bits/task.yaml
+msgid ""
+"Can you infer the value of the `SYN` and `ACK` flags in the three "
+"segments below ?"
+msgstr ""
+
+#. name, test, ACK
+#: tcp-syn-ack-bits/task.yaml
+msgid ""
+"The `ACK` must be set when the TCP header contains a valid "
+"acknowledgement number. In practice, the only segment that does not "
+"contain a valid acknowledgement number is the initial segment sent by the"
+" client to create a connection (in some cases, it is also possible to "
+"observe a `RST` segment that does not contain the `ACK` flag, but this is"
+" rare) "
+msgstr ""
+
+#. name, test, SYN
+#: tcp-syn-ack-bits/task.yaml
+msgid ""
+"The `SYN` flag must only be set in the first segment sent by a host when "
+"establishing a TCP connection. Once the initial `SYN` has been "
+"acknowledged, this flag must remain reset during the entire lifetime of "
+"the connection."
+msgstr ""
+
+#. context
+#: tcp-syn-port/task.yaml
+msgid ""
+"The TCP header, shown in the `TCP chapter "
+"<http://cnp3book.info.ucl.ac.be/2nd/html/protocols/tcp.html>`_ of "
+"`Computer Networking: Principles, Protocols and Practice "
+"<http://cnp3book.info.ucl.ac.be/>`_ contains a source port and a "
+"destination port. The two segments below correspond to the beginning of a"
+" TCP connection."
+msgstr ""
+
+#. name
+#: tcp-syn-port/task.yaml
+msgid "The source and destination ports in the TCP headers"
+msgstr ""
+
+#. name, test, name
+#: tcp-syn-port/task.yaml
+msgid "TCP source and destination ports"
+msgstr ""
+
+#. name, test, header
+#: tcp-syn-port/task.yaml
+msgid ""
+"The first TCP segment was sent by a client to a server to establish a "
+"connection. From the response returned by the server, can you infer the "
+"source and destination ports used in the first segment ?"
+msgstr ""
+
+#. name, test, Destination Port
+#: tcp-syn-port/task.yaml
+msgid ""
+"The Destination Port field is defined in `Section 3.1 of RFC793 "
+"<https://tools.ietf.org/html/rfc793>`_  In the segment sent by the "
+"client, the Destination Port corresponds to the service that is requested"
+" on the server. IANA maintains a list of registered port numbers at "
+"`https://www.iana.org/assignments/service-names-port-numbers/service-"
+"names-port-numbers.xhtml  <https://www.iana.org/assignments/service-"
+"names-port-numbers/service-names-port-numbers.xhtml>`_ When the server "
+"replies, the Destination Port of the request is copied in the Source Port"
+" of the response."
+msgstr ""
+
+#. name, test, Source Port
+#: tcp-syn-port/task.yaml
+msgid ""
+"The Source Port field is defined in `Section 3.1 of RFC793 "
+"<https://tools.ietf.org/html/rfc793>`_   It is usually a unique   port "
+"number that is chosen by the client stack among the unused port numbers. "
+"Port numbers that are lower than 1024 play a special role and can only be"
+" assigned by processes that have administrator privileges. When the "
+"server replies, the Source Port of the request is copied in the "
+"Destination Port of the response."
+msgstr ""
+
+#. context
+#: tcp-syn-seq-ack/task.yaml
+msgid ""
+"The TCP header, shown in the `TCP chapter "
+"<http://cnp3book.info.ucl.ac.be/2nd/html/protocols/tcp.html>`_ of "
+"`Computer Networking: Principles, Protocols and Practice "
+"<http://cnp3book.info.ucl.ac.be/>`_ contains a sequence number and an "
+"acknowledgement number. The three segments below correspond to the three-"
+"way handshake that is used to establish  a TCP connection."
+msgstr ""
+
+#. name
+#: tcp-syn-seq-ack/task.yaml
+msgid "The acknowledgement numbers in the three-way-handshake used by TCP"
+msgstr ""
+
+#. name, test, header
+#: tcp-syn-seq-ack/task.yaml
+msgid ""
+"Can you infer the acknowledgement numbers of the second and third TCP "
+"segments exchanged in the three-way-handshake below ?"
+msgstr ""
+
+#. name, test, Acknowledgement Number
+#: tcp-syn-seq-ack/task.yaml
+msgid ""
+"The Acknowledgement Number is defined in `Section 3.1 of RFC793 "
+"<https://tools.ietf.org/html/rfc793>`_   as follows: *If the ACK control "
+"bit is set this field contains the value of the\n"
+"  next sequence number the sender of the segment is expecting to\n"
+"  receive.  Once a connection is established this is always sent.* "
+"Remember that during the three-way-handshake, the transmission of the SYN"
+" bit consumes one sequence number."
+msgstr ""
+
+#. context
+#: tcp-syn-timestamp/task.yaml
+msgid ""
+"The TCP Timestamp option, defined in `RFC1323 "
+"<https://tools.ietf.org/html/rfc1323>`_ and described in the `TCP chapter"
+" <http://cnp3book.info.ucl.ac.be/2nd/html/protocols/tcp.html>`_ of "
+"`Computer Networking: Principles, Protocols and Practice "
+"<http://cnp3book.info.ucl.ac.be/>`_ allows endhosts to exchange timestamp"
+" information."
+msgstr ""
+
+#. name
+#: tcp-syn-timestamp/task.yaml
+msgid "The TCP Timestamp option"
+msgstr ""
+
+#. name, test, name
+#: tcp-syn-timestamp/task.yaml
+msgid "Negotiation of the TCP Timestamp option"
+msgstr ""
+
+#. name, test, header
+#: tcp-syn-timestamp/task.yaml
+msgid ""
+"Assuming that the server supports the timestamp option, can you predict "
+"the value of the TS Echo Reply field in both segments ?"
+msgstr ""
+
+#. name, test, TS Echo Reply
+#: tcp-syn-timestamp/task.yaml
+msgid ""
+"The TS Echo Reply field is defined in `Section 3.2 of RFC1323 "
+"<https://tools.ietf.org/html/rfc1323>`_  as follows: *         The "
+"Timestamp Echo Reply field (TSecr) is only valid if the ACK\n"
+"       bit is set in the TCP header; if it is valid, it echos a times-\n"
+"       tamp value that was sent by the remote TCP in the TSval field\n"
+"       of a Timestamps option.  When TSecr is not valid, its value\n"
+"       must be zero. *"
+msgstr ""
+
+#. context
+#: tcp-wscale/task.yaml
+msgid ""
+"The TCP Window Scale option, defined in `RFC1323 "
+"<https://tools.ietf.org/html/rfc1323>`_ and described in the `TCP chapter"
+" <http://cnp3book.info.ucl.ac.be/2nd/html/protocols/tcp.html>`_ of "
+"`Computer Networking: Principles, Protocols and Practice "
+"<http://cnp3book.info.ucl.ac.be/>`_ allows endhosts to use a larger "
+"window than TCP's default 64 KBytes window."
+msgstr ""
+
+#. name
+#: tcp-wscale/task.yaml
+msgid "The TCP Windows Scale option"
+msgstr ""
+
+#. name, test, name
+#: tcp-wscale/task.yaml
+msgid "Impact of the window scale option"
+msgstr ""
+
+#. name, test, header
+#: tcp-wscale/task.yaml
+msgid ""
+"The window scale option has been correctly negotiated on this connection."
+" Assuming that that the client will use on the entire connection the same"
+" window size that it announced in the `SYN`, can you infer the value of "
+"the receive window that it will advertise inside its first segments ? "
+msgstr ""
+
+#. name, test, Window
+#: tcp-wscale/task.yaml
+msgid ""
+"Remember that the client announces in its SYN segment the scaling factor "
+"that it will use to announce its windows later. With a window scaling of "
+"9, this implies that the actual window (in bytes), must be divided by "
+":math:`2^9=512` before sending it in the `window` field of the "
+"transmitted segments."
+msgstr ""
+
